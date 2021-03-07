@@ -45,11 +45,7 @@ function ResponsiveDrawer(props) {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
 
     const drawerLinksList = ['Home', 'Notice Board', 'Attendence', 'Fees Details', 'Calander', 'Multimedia', 'Timetable', 'Schedules', 'Support Requests', 'Account'];
     const drawerIconList = [<HomeOutlinedIcon />, <DeveloperBoardOutlinedIcon />, <EventAvailableOutlinedIcon />, <AssignmentOutlinedIcon />, <DateRangeOutlinedIcon />,
@@ -80,8 +76,8 @@ function ResponsiveDrawer(props) {
                     container={container}
                     variant="temporary"
                     anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
+                    open={props.mobileOpen}
+                    onClose={props.handleDrawerToggle}
                     classes={{
                         paper: classes.drawerPaper,
                     }}

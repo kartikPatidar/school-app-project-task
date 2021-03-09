@@ -18,10 +18,10 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-import schoolLogo from './Images/schoolLogo.jpg';
-import CustomCard from './CustomCard';
+import schoolLogo from '../Images/schoolLogo.jpg';
+import AdminCard from './AdminCard';
 
-const drawerWidth = 260;
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '20px',
     },
     drawer: {
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('md')]: {
             width: drawerWidth,
             flexShrink: 0,
         },
@@ -63,7 +63,7 @@ function ResponsiveDrawer(props) {
                     </ListItem>
                 ))}
             </List>
-            <CustomCard />
+            <AdminCard />
         </div>
     );
 
@@ -71,7 +71,7 @@ function ResponsiveDrawer(props) {
 
     return (
         <nav className={classes.drawer} aria-label="mailbox folders">
-            <Hidden smUp implementation="css">
+            <Hidden mdUp implementation="css">
                 <Drawer
                     container={container}
                     variant="temporary"
@@ -88,7 +88,7 @@ function ResponsiveDrawer(props) {
                     {drawer}
                 </Drawer>
             </Hidden>
-            <Hidden xsDown implementation="css">
+            <Hidden smDown implementation="css">
                 <Drawer
                     classes={{
                         paper: classes.drawerPaper,

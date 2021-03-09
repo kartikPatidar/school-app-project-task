@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function CustomCard() {
+function AdminCard() {
     const classes = useStyles();
 
     return (
@@ -41,4 +41,4 @@ function CustomCard() {
 }
 
 
-export default CustomCard;
+export default AdminCard;

@@ -11,6 +11,7 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import CustomDrawer from './CustomDrawer';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/SearchOutlined';
+import { Badge } from '@material-ui/core';
 
 
 const drawerWidth = 250;
@@ -28,18 +29,18 @@ const useStyles = makeStyles((theme) => ({
 		color: '#2b2b2a',
 	},
 	appBar: {
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth,
 		},
 		background: 'white',
 		border: 'none',
 		boxShadow: 'none',
-		padding: '25px 0px',
+		padding: '3vw 0',
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('md')]: {
 			display: 'none',
 		},
 		color: '#2b2b2b',
@@ -114,9 +115,9 @@ function ResponsiveDrawer() {
 					>
 						<MenuIcon className={classes.menuIcon} />
 					</IconButton>
-					<Typography className={classes.title} variant="h6" >
+					<Typography className={classes.title} variant="h5" >
 						Fri, 28 March
-						<Typography className={classes.title} variant="h4" component="b" noWrap>
+						<Typography className={classes.title} variant="h3" component="b" noWrap>
 							Good Morning, Sir
           				</Typography>
 
@@ -135,7 +136,9 @@ function ResponsiveDrawer() {
 							inputProps={{ 'aria-label': 'search' }}
 						/>
 					</div>
-					<NotificationsNoneOutlinedIcon className={classes.notification} />
+					<Badge badgeContent={2} color="error">
+						<NotificationsNoneOutlinedIcon className={classes.notification} />
+					</Badge>
 				</Toolbar>
 			</AppBar>
 			<CustomDrawer handleDrawerToggle={handleDrawerToggle} mobileOpen={mobileOpen} />
